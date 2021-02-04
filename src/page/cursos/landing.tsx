@@ -42,7 +42,7 @@ const LandingPage: React.FC = () => {
       redirect: 'follow'
     };
 
-    fetch("https://192.95.14.82:4000/customers", requestOptions)
+    fetch("http://192.95.14.82:4000/customers", requestOptions)
       .then(response => response.text())
       .then(() => {
         swal("Buen Trabajo!", "Te estaremos notificando pronto!", "success");
