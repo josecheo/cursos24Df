@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import './landing.scss'
 import 'antd/dist/antd.css';
 import { Input, Typography, Button, Checkbox } from 'antd';
-import headerLogo from '../../assets/headers_info.png'
-
-
 
 import { UserOutlined, PhoneOutlined, MailOutlined, SendOutlined, RocketOutlined, EnvironmentOutlined } from '@ant-design/icons';
 const LandingPage: React.FC = () => {
@@ -17,12 +14,6 @@ const LandingPage: React.FC = () => {
   return (
     <div className='wrapp'>
       <div className='wrapp__container-lef'>
-
-        {/* <div className='wrapp__container-lef-rectangule'>
-          <img src={headerLogo}
-            style={{ width: '100%', height: '50px' }}>
-          </img>
-        </div> */}
       </div>
       <div className='wrapp__container-rigth'>
         <div className='wrapp__container-rigth-card'>
@@ -53,11 +44,8 @@ const LandingPage: React.FC = () => {
             Enviar
         </Button>
           <br />
-
         </div>
-
       </div>
-
     </div >
   );
 }
