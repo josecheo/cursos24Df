@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './landing.scss'
 import 'antd/dist/antd.css';
 import { Input, Typography, Button, Checkbox } from 'antd';
+import swal from 'sweetalert'
 
 import { UserOutlined, PhoneOutlined, MailOutlined, SendOutlined, RocketOutlined, EnvironmentOutlined } from '@ant-design/icons';
 
@@ -34,7 +35,9 @@ const LandingPage: React.FC = () => {
 
     var requestOptions: any = {
       method: 'POST',
-      headers: myHeaders,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
       body: raw,
       redirect: 'follow'
     };
@@ -42,6 +45,7 @@ const LandingPage: React.FC = () => {
     fetch("http://192.95.14.82:4000/customers", requestOptions)
       .then(response => response.text())
       .then(() => {
+        swal("Buen Trabajo!", "Te estaremos notificando pronto!", "success");
         setLoadings(false)
         setForm(initialForm)
       })
@@ -57,7 +61,6 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className='wrapp'>
-      {console.log('form', form)}
       <div className='wrapp__container-lef'>
       </div>
       <div className='wrapp__container-rigth'>
