@@ -10,7 +10,6 @@ const columns = [
     title: 'Nombre',
     dataIndex: 'nombre',
     key: 'nombre',
-    render: (text: React.ReactNode) => <a>{text}</a>,
   },
   {
     title: 'Telefono',
