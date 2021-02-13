@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import './administrador.scss';
-import { Layout, Select, Space, Table, Tag } from 'antd';
+import { Layout, Select, Table } from 'antd';
 import Title from 'antd/lib/typography/Title';
 
 const { Content, } = Layout;
@@ -41,7 +41,7 @@ const columns = [
 
 const ListAlumnos: React.FC = () => {
   const { Option } = Select;
-  const [listaCursos, setListaCursos] = useState([{
+  const [listaCursos] = useState([{
     value: 'Curso de Linux',
     name: 'Curso de Linux'
   }])
