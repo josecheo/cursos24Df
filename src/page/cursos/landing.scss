@@ -24,7 +24,9 @@ background-size: cover;
 // bottom: 0;
 // }
 
-
+    @media (max-width: 425px) {
+       display: none;
+    }
 
 }
 
@@ -35,6 +37,11 @@ background-size: cover;
   justify-content: center;
   align-items: center;
   padding: 50px;
+
+
+      @media (max-width: 375px) {
+       padding: 10px;
+    }
 
   &-card {
     display: flex;

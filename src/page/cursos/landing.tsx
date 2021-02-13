@@ -28,29 +28,35 @@ const LandingPage: React.FC = () => {
 
   const handleSubmit = () => {
     setLoadings(true)
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify(form);
-
-    var requestOptions: any = {
-      method: 'POST',
+    var axios = require('axios');
+    var config = {
+      method: 'post',
+      url: 'https://nodecursos24d.herokuapp.com/customers',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
-      body: raw,
-      redirect: 'follow'
+      data: form
     };
 
-    fetch("http://192.95.14.82:4000/customers", requestOptions)
-      .then(response => response.text())
-      .then(() => {
+    axios(config)
+      .then(function (response: { data: any; }) {
+
         swal("Buen Trabajo!", "Te estaremos notificando pronto!", "success");
         setLoadings(false)
         setForm(initialForm)
+
+
       })
-      .catch(error => console.log('error', error));
+      .catch(function (error: any) {
+        console.log(error);
+      });
+
   }
+
+
+
+
   useEffect(() => {
     if (form.nombre !== '' && form.telefono !== '' && form.ciudad !== '' && form.correo !== '') {
       setIsDisable(false)
