@@ -10,18 +10,20 @@ const Administrador = lazy(() => import('./page/adm'))
 const Lista = lazy(() => import('./page/adm/lista-alumnos'))
 const Routes: React.FC = () => {
   return (
-    <Router history={History}>
-      <Suspense fallback={<Loader />}>
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/curso" />
-          </Route>
-          <Route exact path="/curso" component={Landing} />
-          <Route exact path="/adm" component={Administrador} />
-          <Route exact path="/adm/lista" component={Lista} />
-        </Switch>
-      </Suspense>
-    </Router>
+    <Switch>
+      <Router history={History}>
+        <Suspense fallback={<Loader />}>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/curso" />
+            </Route>
+            <Route exact path="/curso" component={Landing} />
+            <Route exact path="/adm" component={Administrador} />
+            <Route exact path="/adm/lista" component={Lista} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </Switch>
   );
 };
 
