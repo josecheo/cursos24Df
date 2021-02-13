@@ -75,7 +75,8 @@ const ListAlumnos: React.FC = () => {
       .catch(function (error: any) {
         console.log(error);
       });
-  }, [config])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
 
 
