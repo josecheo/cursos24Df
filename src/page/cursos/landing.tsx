@@ -40,7 +40,7 @@ const LandingPage: React.FC = () => {
     };
 
     axios(config)
-      .then(function (response: { data: any; }) {
+      .then(function () {
 
         swal("Buen Trabajo!", "Te estaremos notificando pronto!", "success");
         setLoadings(false)
@@ -53,9 +53,6 @@ const LandingPage: React.FC = () => {
       });
 
   }
-
-
-
 
   useEffect(() => {
     if (form.nombre !== '' && form.telefono !== '' && form.ciudad !== '' && form.correo !== '') {
