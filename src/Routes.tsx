@@ -10,8 +10,9 @@ const Administrador = lazy(() => import('./page/adm'))
 const Lista = lazy(() => import('./page/adm/lista-alumnos'))
 const Routes: React.FC = () => {
   return (
-    <Switch>
-      <Router history={History}>
+
+    <Router history={History}>
+      <Switch>
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/">
@@ -22,8 +23,9 @@ const Routes: React.FC = () => {
             <Route exact path="/adm/lista" component={Lista} />
           </Switch>
         </Suspense>
-      </Router>
-    </Switch>
+      </Switch>
+    </Router>
+
   );
 };
 
