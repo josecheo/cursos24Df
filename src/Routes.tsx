@@ -13,16 +13,16 @@ const Routes: React.FC = () => {
 
     <Router history={History}>
       <Switch>
-        <Suspense fallback={<Loader />}>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/curso" />
-            </Route>
-            <Route exact path="/curso" component={Landing} />
-            <Route exact path="/adm" component={Administrador} />
-            <Route exact path="/adm/lista" component={Lista} />
-          </Switch>
-        </Suspense>
+        {/* <Suspense fallback={<Loader />}> */}
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/curso" />
+          </Route>
+          <Route exact path="/curso" component={Landing} />
+          <Route exact path="/adm" component={Administrador} />
+          <Route exact path="/adm/lista" component={Lista} />
+        </Switch>
+        {/* </Suspense> */}
       </Switch>
     </Router>
 
