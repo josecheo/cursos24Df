@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, Router, Switch, Redirect } from 'react-router-dom';
+import { Route, Router, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import Loader from './components/loader'
 import History from './history';
 
@@ -10,26 +10,20 @@ const Administrador = lazy(() => import('./page/adm'))
 const Lista = lazy(() => import('./page/adm/lista-alumnos'))
 const Routes: React.FC = () => {
   return (
-
-    <Router history={History}>
-      <Switch>
+    <BrowserRouter>
+      <Router history={History}>
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/">
               <Redirect to="/curso" />
             </Route>
             <Route exact path="/curso" component={Landing} />
-
-            <Route exact path="/adm">
-              <Redirect to="/adm" />
-            </Route>
-
             <Route exact path="/adm" component={Administrador} />
             <Route exact path="/adm/lista" component={Lista} />
           </Switch>
         </Suspense>
-      </Switch>
-    </Router>
+      </Router>
+    </BrowserRouter>
 
   );
 };
