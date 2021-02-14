@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, Router, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import { Route, Router, Switch, BrowserRouter } from 'react-router-dom';
 import Loader from './components/loader'
 import History from './history';
 
